@@ -9,6 +9,65 @@
 
 }
 
+/* Fixed Layout Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Fixed Navbar */
+.navbar {
+    background-color: lightsalmon !important;
+    overflow: hidden;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Main Content Container */
+main {
+    margin-top: 70px;
+    flex: 1;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 20px 30px;
+    margin-top: 100px;
+}
+
+/* Fixed Footer */
+footer {
+    background-color: lightsalmon;
+    color: white;
+    padding: 20px 0;
+    margin-top: auto;
+    width: 100%;
+}
+
+footer .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 30px;
+    text-align: center;
+}
+
 span{
     font-weight: bolder;
 }
@@ -18,6 +77,10 @@ body, h1, h2, h3, h4, h5, h5, p, a, li, span{
     color: var(--text-dark);
     font-family: 'Times New Roman', Times, serif;
 
+}
+
+body {
+    padding-top: 70px; /* Account for fixed navbar */
 }
 
 .navbar {
@@ -38,7 +101,134 @@ position: relative;
 
 /* Navigation active state */
 .nav-link.active {
-    background-color:white;
+    background-color:black;
     border-radius: 5px;
     font-weight: bold;
+}
+
+/* Section Styles */
+section {
+    padding: 40px 0;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: var(--text-dark);
+}
+
+/* Card Layout */
+.card {
+    background: var(--white);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.card-title {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Grid Layouts */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col {
+    flex: 1;
+    padding: 0 15px;
+    margin-bottom: 20px;
+}
+
+.col-2 { flex: 0 0 50%; max-width: 50%; }
+.col-3 { flex: 0 0 33.33%; max-width: 33.33%; }
+.col-4 { flex: 0 0 25%; max-width: 25%; }
+
+/* Responsive Grid */
+@media (max-width: 768px) {
+    .col-2, .col-3, .col-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+/* Image Styles */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.img-fluid {
+    width: 100%;
+    height: auto;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--text-dark);
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: lightsalmon;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table th {
+    background-color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Form Styles */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
 }
