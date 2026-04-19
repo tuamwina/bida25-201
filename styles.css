@@ -1,0 +1,44 @@
+:root{
+
+    --primary-color:powderblue;
+    --text-dark: black;
+    --text-light: #28221e;
+    --extra-light: #f0efef;
+    --white: #ffffff;
+    --max-width: 1200px;
+
+}
+
+span{
+    font-weight: bolder;
+}
+
+body, h1, h2, h3, h4, h5, h5, p, a, li, span{
+
+    color: var(--text-dark);
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.navbar {
+
+background-color: lightsalmon !important;
+overflow: hidden;
+position: relative;
+
+}
+
+
+/* Navigation hover state */
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Navigation active state */
+.nav-link.active {
+    background-color:white;
+    border-radius: 5px;
+    font-weight: bold;
+}
