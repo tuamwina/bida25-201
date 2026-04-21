@@ -31,3 +31,11 @@ window.addEventListener('load', function() {
     x.style.display = "none";
   }
 });
+
+function openForm() {
+  document.getElementById("booking-form").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("booking-form").style.display = "none";
+}
