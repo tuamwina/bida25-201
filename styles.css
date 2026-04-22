@@ -30,41 +30,71 @@ span{
     font-weight: bolder;
 }
 
-body, h1, h2, h3, h4, h5, h5, p, a, li, span{
+body, h1, h2, h3, h4, h5, h5, p, li, span{
 
     color: var(--white);
     font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none !important;
 
 }
 
+h1, h3 {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
 
 
 /* Hero Section with Background */
-.hero-section {
-    min-height: calc(100vh - 70px);
+
+.home-section {
+    position: relative;
+    min-height: auto;
+    padding-bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Blurred background layer */
+.home-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: url(image3.jpg);
     background-size: cover;
     background-position: center;
-    
-    display: flex;
-    justify-content: space-between; /* pushes left & right */
-    align-items: center; /* vertical center */
-    padding: 0 80px;
+    filter: blur(6px) brightness(0.4);
+    z-index: 0;
 }
 
-.hero-content {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 30px;
-    border-radius: 10px;
+/* Content stays sharp */
+.home-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.text-content {
     max-width: 500px;
 }
 
 .booking-form-wrapper {
-    background-color: darkgrey;
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 30px;
     border-radius: 10px;
     max-width: 400px;
-    float: right;
+    justify-content: right;
 }
 
 #booking-form {
@@ -84,9 +114,9 @@ body, h1, h2, h3, h4, h5, h5, p, a, li, span{
   width: auto;
 }
 
-.form-container .cancel {
+.close-button {
 
-  background-color: red;
+  background-color: #FF474C;
   
 }
 
@@ -314,18 +344,40 @@ footer {
     background-image: url(image3.jpg);
     background-size: cover;
     background-position: center;
-    filter: blur(8px) brightness(0.6);
+    filter: blur(6px) brightness(0.4);
     z-index: 0;
 }
 
 /* Content stays sharp */
+@media (max-width: 768px){
 .about-content {
     position: relative;
     z-index: 1;
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 50px;
     max-width: 1000px;
+    flex-direction: column;
+    text-align: center;
+}
+.about-content img {
+    width: 100%;
+    border-radius: 20px;
+    margin: 0 auto;
+}
+}
+
+.about-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1000px;
+}
+.about-content img {
+    width: 100%;
+    border-radius: 20px;
 }
 
 
