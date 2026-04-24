@@ -4,7 +4,7 @@
 
     --primary-color:powderblue;
     --text-dark: black;
-    --text-light: #28221e;
+    --text-light: #363737;
     --extra-light: #f0efef;
     --white: #ffffff;
     --max-width: 1200px;
@@ -49,18 +49,32 @@ a {
 
 /* Hero Section with Background */
 
-.home-section {
+.home-section, .about-section {
     position: relative;
-    min-height: auto;
-    padding-bottom: 100px;
+    min-height: calc(100vh - 90px);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    padding: 120px;
+    z-index: 1;
+} 
+
+.contact-section {
+    position: relative;
+    min-height: calc(100vh - 90px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    padding: 60px 20px;
+    z-index: 1;
+    flex: 1;
+    overflow: hidden;
 }
 
 /* Blurred background layer */
-.home-section::before {
+.home-section::before, .about-section::before, .contact-section::before {
     content: "";
     position: absolute;
     top: 0;
@@ -72,29 +86,59 @@ a {
     background-position: center;
     filter: blur(6px) brightness(0.4);
     z-index: 0;
+    transform: scale(1.1);
+
 }
 
 /* Content stays sharp */
-.home-content {
+.home-content, .about-content {
     position: relative;
     z-index: 1;
     display: flex;
     align-items: center;
+    gap: 50px;
+    max-width: 1000px;
+    justify-content: center;
+   
+}
+
+.contact-content{
+
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 1000px;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex;
+
+}
+.contact-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: flex-start;
     gap: 40px;
-    max-width: 1200px;
-    width: 100%;
+    flex-wrap: wrap;
 }
 
-.text-content {
-    max-width: 500px;
-}
 
-.booking-form-wrapper {
+
+.booking-form-wrapper, .contact-form {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 30px;
     border-radius: 10px;
     max-width: 400px;
-    justify-content: right;
+    justify-content: center !important;
+    flex: 1;
+    max-width: 400px;
+    color: white;
+    z-index: 2;
 }
 
 #booking-form {
@@ -123,9 +167,6 @@ a {
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 }
-
-
-
 
 /* Fixed Navbar */
 .navbar {
@@ -160,7 +201,7 @@ a {
 
 /* Main Content Container */
 main {
-    margin-top: 70px;
+    margin-top: 90px;
 }
 
 .container {
@@ -177,6 +218,7 @@ footer {
     margin-top: 0;
     width: 100%;
     clear: both;
+    z-index: 3;
 }
 
 footer .container {
@@ -185,7 +227,6 @@ footer .container {
     padding: 0 30px;
     text-align: center;
 }
-
 
 /* Section Styles */
 section {
@@ -197,17 +238,18 @@ section {
     text-align: center;
     margin-bottom: 30px;
     font-size: 2rem;
-    color: var(--text-dark);
+    color: var(--white);
 }
 
 /* Card Layout */
 .card {
-    background: var(--white);
+    background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 18rem;
 }
 
 .card-title {
@@ -217,11 +259,6 @@ section {
 }
 
 /* Grid Layouts */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -15px;
-}
 
 .col {
     flex: 1;
@@ -264,6 +301,12 @@ img {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    color: black !important;
+    border: none;
 }
 
 .btn:hover {
@@ -314,40 +357,6 @@ form {
     font-family: inherit;
 }
 
-/* Footer Styles */
-
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    width: 100%;
-}
-
-.about-section {
-    position: relative;
-    min-height: calc(100vh - 90px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-/* Blurred background layer */
-.about-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url(image3.jpg);
-    background-size: cover;
-    background-position: center;
-    filter: blur(6px) brightness(0.4);
-    z-index: 0;
-}
-
 /* Content stays sharp */
 @media (max-width: 768px){
 .about-content {
@@ -364,21 +373,32 @@ footer {
     width: 100%;
     border-radius: 20px;
     margin: 0 auto;
+    margin-bottom: 20px;
 }
 }
 
-.about-content {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    max-width: 1000px;
-}
 .about-content img {
     width: 100%;
     border-radius: 20px;
+    height: auto;
 }
+
+@media (max-width: 768px) {
+    .contact-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-form {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+
+
+
+
 
 
 

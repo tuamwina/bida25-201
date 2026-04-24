@@ -39,3 +39,25 @@ function openForm() {
 function closeForm() {
   document.getElementById("booking-form").style.display = "none";
 }
+
+const contactForm = document.querySelector("#contactMessage").closest("form");
+const contactMessage = document.getElementById("contactMessage");
+
+contactForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+    contactMessage.style.display = "block";
+    contactForm.reset();
+});
+
+const bookButtons = document.querySelectorAll(".book-btn");
+
+bookButtons.forEach(button => {
+    button.addEventListener("click", function() {
+        const message = this.nextElementSibling;
+
+        message.style.display = "block";
+
+        // optional: scroll to the message smoothly
+        message.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+});
