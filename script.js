@@ -45,8 +45,17 @@ const contactMessage = document.getElementById("contactMessage");
 
 contactForm.addEventListener("submit", function(e) {
     e.preventDefault();
+
+    // show message
     contactMessage.style.display = "block";
+
+    // reset form
     contactForm.reset();
+
+    // hide after 3 seconds
+    setTimeout(() => {
+        contactMessage.style.display = "none";
+    }, 2000); // 3 seconds
 });
 
 const bookButtons = document.querySelectorAll(".book-btn");
