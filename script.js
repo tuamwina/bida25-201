@@ -50,23 +50,28 @@ contactForm.addEventListener("submit", function(e) {
     contactMessage.style.display = "block";
 
     // reset form
-    contactForm.reset();
+    accommodationcards.reset();
 
     // hide after 3 seconds
     setTimeout(() => {
-        contactMessage.style.display = "none";
+        bookingMessageMessage.style.display = "none";
     }, 2000); // 3 seconds
 });
 
-const bookButtons = document.querySelectorAll(".book-btn");
+const accommodationcards = document.querySelector("#bookingMessage").closest("cards");
+const bookingMessage = document.getElementById("bookingMessage");
 
-bookButtons.forEach(button => {
-    button.addEventListener("click", function() {
-        const message = this.nextElementSibling;
+accommodationcards.addEventListener("Book Now", function(e) {
+    e.preventDefault();
 
-        message.style.display = "block";
+    // show message
+    bookingMessage.style.display = "block";
 
-        // optional: scroll to the message smoothly
-        message.scrollIntoView({ behavior: "smooth", block: "center" });
-    });
+    // reset form
+    accommodationcards.reset();
+
+    // hide after 3 seconds
+    setTimeout(() => {
+        bookingMessage.style.display = "none";
+    }, 2000); // 3 seconds
 });

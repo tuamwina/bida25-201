@@ -23,6 +23,11 @@ body {
     min-height: 100vh;
     margin: 0;
     padding-top: 90px;
+    overflow-x: hidden;
+    flex-direction: column;
+    display: flex;
+
+
     
 }
 
@@ -49,15 +54,15 @@ a {
 
 /* Hero Section with Background */
 
-.home-section, .about-section {
+.home-section, .about-section, .accommodation-section, .facilities-section, .rules-section {
     position: relative;
-    min-height: calc(100vh - 90px);
-    display: flex;
-    align-items: center;
+    min-height: 100vh; 
+    display: block;
     justify-content: center;
     overflow: hidden;
-    padding: 120px;
     z-index: 1;
+    padding: 60px 20px;
+    flex: 1;
 } 
 
 .contact-section {
@@ -77,15 +82,12 @@ a {
 .home-section::before, .about-section::before, .contact-section::before, .rules-section::before, .accommodation-section::before, .facilities-section::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     background-image: url(image3.jpg);
     background-size: cover;
     background-position: center;
     filter: blur(6px) brightness(0.4);
-    z-index: 0;
+    z-index: -1;
     transform: scale(1.1);
 
 }
@@ -130,15 +132,34 @@ a {
 
 
 
-.booking-form-wrapper, .contact-form {
+.booking-form-wrapper {
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 30px;
+    padding: 40px;
     border-radius: 10px;
-    max-width: 400px;
+    max-width: 800px;
     justify-content: center !important;
     flex: 1;
     color: white;
     z-index: 2;
+    width: 80% !important;
+}
+.contact-form {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    justify-content: center !important;
+    flex: 1;
+    color: white;
+    z-index: 2;
+    width: 100% !important;
+}
+
+
+@media (min-width: 992px) {
+    .booking-form-wrapper {
+        max-width: 600px;
+    }
 }
 
 #booking-form {
@@ -202,6 +223,7 @@ a {
 /* Main Content Container */
 main {
     margin-top: 90px;
+    flex: 1;
 }
 
 .container {
@@ -215,7 +237,7 @@ footer {
     background-color: #333333 !important;
     color: white;
     padding: 20px 0;
-    margin-top: 0;
+    margin-top: auto;
     width: 100%;
     clear: both;
     z-index: 3;
@@ -254,15 +276,15 @@ section {
     width: 100%;
 }
 
-
 .card:hover {
     transform: translateY(-5px);
 }
+
 .accommodation-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    grid-template-columns: repeat(2, 1fr); 
     gap: 25px;
-    padding: 40px;
+    padding: 20px;
 }
 
 .facilities-cards {
@@ -279,9 +301,15 @@ section {
 }
 @media (max-width: 768px) {
     .accommodation-cards,
-    .house-rules-cards
+    .rules-cards,
     .facilities-cards {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 768px){
+    .about-content {
+        gap: 20px;
+        padding: 0 15px;
     }
 }
 
@@ -396,6 +424,10 @@ form {
 }
 
 #contactMessage {
+    transition: opacity 0.5s ease;
+}
+.booking-message {
+    display: none;
     transition: opacity 0.5s ease;
 }
 
