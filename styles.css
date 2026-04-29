@@ -236,7 +236,7 @@ main {
 footer {
     background-color: #333333 !important;
     color: white;
-    padding: 20px 0;
+    padding: 40px 20px;
     margin-top: auto;
     width: 100%;
     clear: both;
@@ -248,6 +248,10 @@ footer .container {
     margin: 0 auto;
     padding: 0 30px;
     text-align: center;
+}
+.copyright{
+    text-align: center;
+    margin-top: 20px;
 }
 
 /* Section Styles */

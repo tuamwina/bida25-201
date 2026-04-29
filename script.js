@@ -43,35 +43,34 @@ function closeForm() {
 const contactForm = document.querySelector("#contactMessage").closest("form");
 const contactMessage = document.getElementById("contactMessage");
 
-contactForm.addEventListener("submit", function(e) {
-    e.preventDefault();
+if (contactMessage) {
+    const contactForm = contactMessage.closest("form");
 
-    // show message
-    contactMessage.style.display = "block";
+    contactForm.addEventListener("submit", function(e) {
+        e.preventDefault();
 
-    // reset form
-    accommodationcards.reset();
+        contactMessage.style.display = "block";
 
-    // hide after 3 seconds
-    setTimeout(() => {
-        bookingMessageMessage.style.display = "none";
-    }, 2000); // 3 seconds
-});
+        contactForm.reset();
 
-const accommodationcards = document.querySelector("#bookingMessage").closest("cards");
-const bookingMessage = document.getElementById("bookingMessage");
+        setTimeout(() => {
+            contactMessage.style.display = "none";
+        }, 2000);
+    });
+}
 
-accommodationcards.addEventListener("Book Now", function(e) {
-    e.preventDefault();
+const buttons = document.querySelectorAll(".book-btn");
 
-    // show message
-    bookingMessage.style.display = "block";
+buttons.forEach(button => {
+    button.addEventListener("click", function () {
 
-    // reset form
-    accommodationcards.reset();
+        // find the message inside the same card
+        const message = this.parentElement.querySelector(".bookingMessage");
 
-    // hide after 3 seconds
-    setTimeout(() => {
-        bookingMessage.style.display = "none";
-    }, 2000); // 3 seconds
+        message.style.display = "block";
+
+        setTimeout(() => {
+            message.style.display = "none";
+        }, 2000);
+    });
 });
