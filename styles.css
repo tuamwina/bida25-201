@@ -371,6 +371,7 @@ img {
 @media (min-width: 992px) {
   #mylinks {
     display: flex !important;
+    flex-direction: column;
   }
 }
 
