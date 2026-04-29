@@ -101,7 +101,6 @@ a {
     max-width: 1000px;
     justify-content: center;
     
-   
 }
 
 .contact-content{
@@ -359,21 +358,7 @@ img {
     background-color: lightsalmon;
 }
 
-#mylinks {
-  display: none;
-  flex-direction: row; 
-}
 
-#mylinks.active {
-  display: flex;
-}
-
-@media (min-width: 992px) {
-  #mylinks {
-    display: flex !important;
-    flex-direction: column;
-  }
-}
 
 /* Form Styles */
 form {
