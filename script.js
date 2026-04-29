@@ -3,7 +3,6 @@ console.log("JavaScript is connected!");
 function myFunction() {
   var x = document.getElementById("mylinks");
   if (window.innerWidth < 992) {
-    // On mobile: toggle between flex and none
     if (x.style.display === "none" || x.style.display === "") {
       x.style.display = "flex";
     } else {
@@ -60,17 +59,31 @@ if (contactMessage) {
 }
 
 const buttons = document.querySelectorAll(".book-btn");
+let bookings = [];
 
 buttons.forEach(button => {
-    button.addEventListener("click", function () {
+    button.addEventListener("click", function (e) {
+        e.preventDefault(); 
 
-        // find the message inside the same card
-        const message = this.parentElement.querySelector(".bookingMessage");
+        const card = this.closest(".card");
 
-        message.style.display = "block";
+        // get room name
+        const roomName = card.querySelector(".card-title").innerText;
+
+        // store booking
+        bookings.push({
+            room: roomName,
+            time: new Date().toLocaleString()
+        });
+
+        // show feedback message
+        const messageDiv = card.querySelector(".bookingMessage");
+        messageDiv.textContent = "✅ Thank you! Your booking request has been received.";
+        messageDiv.style.display = "block";
 
         setTimeout(() => {
-            message.style.display = "none";
-        }, 2000);
+            messageDiv.style.display = "none";
+        }, 4000);
     });
 });
+

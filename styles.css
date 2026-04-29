@@ -22,13 +22,11 @@ html {
 body {
     min-height: 100vh;
     margin: 0;
-    padding-top: 90px;
+    margin-top: 90px;
     overflow-x: hidden;
     flex-direction: column;
     display: flex;
 
-
-    
 }
 
 span{
@@ -61,8 +59,8 @@ a {
     justify-content: center;
     overflow: hidden;
     z-index: 1;
-    padding: 60px 20px;
     flex: 1;
+    padding: 60px 20px;
 } 
 
 .contact-section {
@@ -76,6 +74,7 @@ a {
     z-index: 1;
     flex: 1;
     overflow: hidden;
+
 }
 
 /* Blurred background layer */
@@ -89,7 +88,6 @@ a {
     filter: blur(6px) brightness(0.4);
     z-index: -1;
     transform: scale(1.1);
-
 }
 
 
@@ -102,6 +100,7 @@ a {
     gap: 50px;
     max-width: 1000px;
     justify-content: center;
+    
    
 }
 
@@ -130,8 +129,6 @@ a {
     flex-wrap: wrap;
 }
 
-
-
 .booking-form-wrapper {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 40px;
@@ -141,7 +138,7 @@ a {
     flex: 1;
     color: white;
     z-index: 2;
-    width: 80% !important;
+    width: 90% !important;
 }
 .contact-form {
     background-color: rgba(0, 0, 0, 0.5);
@@ -239,8 +236,11 @@ footer {
     padding: 40px 20px;
     margin-top: auto;
     width: 100%;
+    position: relative;
     clear: both;
     z-index: 3;
+    text-align: center;
+
 }
 
 footer .container {
@@ -317,14 +317,12 @@ section {
     }
 }
 
-
 .card-title {
     font-size: 1.25rem;
     margin-bottom: 15px;
     font-weight: bold;
     color: white;
 }
-
 
 /* Image Styles */
 img {
@@ -361,7 +359,20 @@ img {
     background-color: lightsalmon;
 }
 
+#mylinks {
+  display: none;
+  flex-direction: row; 
+}
 
+#mylinks.active {
+  display: flex;
+}
+
+@media (min-width: 992px) {
+  #mylinks {
+    display: flex !important;
+  }
+}
 
 /* Form Styles */
 form {
@@ -430,9 +441,14 @@ form {
 #contactMessage {
     transition: opacity 0.5s ease;
 }
-.booking-message {
+.bookingMessage {
     display: none;
     transition: opacity 0.5s ease;
+}
+.carousel-item img {
+    width: 100%;
+    height: 250px;   
+    object-fit: cover;
 }
 
 
