@@ -10,7 +10,6 @@ function myFunction() {
     }
   }
 }
-
 window.addEventListener('resize', function() {
   var x = document.getElementById("mylinks");
   if (window.innerWidth >= 992) {
