@@ -1,5 +1,4 @@
 console.log("JavaScript is connected!"); 
-let formCompleted = localStorage.getItem("formCompleted") === "true";
 function myFunction() {
   var x = document.getElementById("mylinks");
   if (window.innerWidth < 992) {
