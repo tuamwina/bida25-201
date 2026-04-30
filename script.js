@@ -1,5 +1,5 @@
 console.log("JavaScript is connected!"); 
-if (localStorage.setItem("formCompleted", "true"))
+let formCompleted = localStorage.getItem("formCompleted") === "true";
 function myFunction() {
   var x = document.getElementById("mylinks");
   if (window.innerWidth < 992) {
@@ -20,7 +20,6 @@ window.addEventListener('resize', function() {
   }
 });
 
-// Initialize on load
 window.addEventListener('load', function() {
   var x = document.getElementById("mylinks");
   if (window.innerWidth >= 992) {
@@ -72,7 +71,6 @@ buttons.forEach(button => {
             messageDiv.style.display = "block";
             messageDiv.style.opacity = "1";
 
-            // OPTIONAL REDIRECT
             setTimeout(() => {
                 window.location.href = "index.html#booking-form";
             }, 1500);
@@ -105,7 +103,7 @@ if (bookingForm) {
         e.preventDefault();
 
         if (!bookingForm.checkValidity()) {
-            alert("⚠️ Please fill in all required fields.");
+            alert("Please fill in all required fields.");
             return;
         }
 
