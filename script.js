@@ -64,18 +64,6 @@ buttons.forEach(button => {
         const card = this.closest(".card");
         const messageDiv = card.querySelector(".bookingMessage");
 
-        if (!formCompleted) {
-            messageDiv.textContent = "Please fill in the booking form first before selecting a room.";
-
-            messageDiv.style.display = "block";
-            messageDiv.style.opacity = "1";
-
-            setTimeout(() => {
-                window.location.href = "index.html#booking-form";
-            }, 1500);
-
-            return;
-        }
         const roomName = card.querySelector(".card-title").innerText;
 
         messageDiv.textContent = "Thank you for choosing Letsha Sanctuary Lodge. A confirmation email with your booking details and next steps will be sent to you shortly. We look forward to hosting you.";
