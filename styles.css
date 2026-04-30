@@ -136,19 +136,26 @@ a {
     justify-content: center !important;
     flex: 1;
     color: white;
-    z-index: 2;
+    z-index: 10000;
     width: 90% !important;
+}
+
+#booking-form input,
+#booking-form select {
+    width: 100% !important;
+    height: 40px;
+    font-size: 16px;
 }
 .contact-form {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 30px;
     border-radius: 10px;
-    max-width: 500px;
+    max-width: 600px;
     justify-content: center !important;
     flex: 1;
     color: white;
     z-index: 2;
-    width: 100% !important;
+    width: 100%;
 }
 
 
@@ -160,6 +167,8 @@ a {
 
 #booking-form {
     display: none;
+    position: relative;
+    z-index: 10001;
 }
 
 .open-button {
@@ -288,6 +297,7 @@ section {
     grid-template-columns: repeat(2, 1fr); 
     gap: 25px;
     padding: 20px;
+    z-index: 2;
 }
 
 .facilities-cards {
@@ -357,8 +367,11 @@ img {
 .btn:hover {
     background-color: lightsalmon;
 }
-
-
+.book-btn {
+    background-color: var(--primary-color) !important;
+    color: black !important;
+    border: none;
+}
 
 /* Form Styles */
 form {
@@ -429,6 +442,7 @@ form {
 }
 .bookingMessage {
     display: none;
+    opacity: 0;
     transition: opacity 0.5s ease;
 }
 .carousel-item img {
