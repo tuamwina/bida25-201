@@ -50,7 +50,6 @@ a {
 }
 
 
-/* Hero Section with Background */
 
 .home-section, .about-section, .accommodation-section, .facilities-section, .rules-section {
     position: relative;
@@ -77,7 +76,6 @@ a {
 
 }
 
-/* Blurred background layer */
 .home-section::before, .about-section::before, .contact-section::before, .rules-section::before, .accommodation-section::before, .facilities-section::before {
     content: "";
     position: absolute;
@@ -91,7 +89,6 @@ a {
 }
 
 
-/* Content stays sharp */
 .home-content, .about-content {
     position: relative;
     z-index: 1;
@@ -194,7 +191,6 @@ a {
   opacity: 1;
 }
 
-/* Fixed Navbar */
 .navbar {
     background-color: #363737 !important;
     overflow: hidden;
@@ -225,7 +221,6 @@ a {
     font-weight: bold;
 }
 
-/* Main Content Container */
 main {
     margin-top: 90px;
     flex: 1;
@@ -237,7 +232,6 @@ main {
     padding: 20px 30px;
 }
 
-/* Fixed Footer */
 footer {
     background-color: #333333 !important;
     color: white;
@@ -262,7 +256,6 @@ footer .container {
     margin-top: 20px;
 }
 
-/* Section Styles */
 section {
     padding: 40px 0;
     margin-bottom: 20px;
@@ -275,7 +268,6 @@ section {
     color: var(--white);
 }
 
-/* Card Layout */
 .card {
     background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid #ddd;
@@ -333,7 +325,6 @@ section {
     color: white;
 }
 
-/* Image Styles */
 img {
     max-width: 100%;
     height: auto;
@@ -345,7 +336,6 @@ img {
     height: auto;
 }
 
-/* Button Styles */
 .btn {
     display: inline-block;
     padding: 10px 20px;
@@ -373,7 +363,6 @@ img {
     border: none;
 }
 
-/* Form Styles */
 form {
     max-width: 600px;
     margin: 0 auto;
@@ -399,7 +388,6 @@ form {
     font-family: inherit;
 }
 
-/* Content stays sharp */
 @media (max-width: 768px){
 .about-content {
     position: relative;
