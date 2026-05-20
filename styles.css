@@ -55,7 +55,7 @@ a {
     overflow: hidden;
     z-index: 1;
     flex: 1;
-    padding: 60px 20px;
+    padding: 60px 15px;
 } 
 
 .contact-section {
@@ -65,11 +65,18 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start; 
-    padding: 60px 20px;
+    padding: 60px 15px;
     z-index: 1;
     flex: 1;
     overflow: hidden;
 
+}
+@media (min-width: 480px) {
+    .home-section,
+    .about-section,
+    .contact-section {
+        padding: 60px 20px;
+    }
 }
 
 .home-section::before, .about-section::before, .contact-section::before, .rules-section::before, .accommodation-section::before, .facilities-section::before {
@@ -92,8 +99,8 @@ a {
     align-items: center;
     gap: 50px;
     max-width: 1000px;
-    justify-content: center;
-    
+    justify-content: center; 
+    margin: 0 auto;
 }
 
 .contact-content{
@@ -123,16 +130,25 @@ a {
 
 .booking-form-wrapper {
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 40px;
+    padding: 30px 20px;
     border-radius: 10px;
-    max-width: 900px;
+    max-width: 420px;
     justify-content: center !important;
     flex: 1;
     color: white;
     z-index: 10000;
-    width: 100%;
-    margin: 0 auto;
+    width: 90%;
+    margin: 20px auto;
 }
+
+@media (min-width: 768px) {
+    .booking-form-wrapper {
+        max-width: 500px;
+        padding: 40px;
+        width: 100%;
+    }
+}
+
 
 #booking-form input,
 #booking-form select {
