@@ -27,14 +27,6 @@ window.addEventListener('load', function() {
   }
 });
 
-function openForm() {
-  document.getElementById("booking-form").style.display = "block";
-}
-
-function closeForm() {
-  document.getElementById("booking-form").style.display = "none";
-}
-
 const buttons = document.querySelectorAll(".book-btn");
 
 function detectAccommodationPage() {

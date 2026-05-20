@@ -199,35 +199,6 @@ a {
         z-index: 10001;
 }
 
-@media (max-width: 768px) {
-    
-    #booking-form {
-        display: none;
-    }
-    .open-button {
-        display: inline-block;
-    }
-}
-
-.open-button {
-  background-color: green;
-  color: black;
-  padding: 12px 18px;
-  border: none;
-  cursor: pointer;
-  opacity: 0.8;
-  position: static;
-  width: auto;
-  border-radius: 8px;
-}
-
-.close-button {
-  background-color: #FF474C;
-  border-radius: 8px;
-  padding: 10px 14px;
-  font-size: 14px;
-}
-
 .form-container button {
     margin-right: 10px;
     margin-bottom: 10px;
