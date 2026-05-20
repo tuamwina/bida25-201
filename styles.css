@@ -194,7 +194,6 @@ a {
 
 
 #booking-form {
-    display: inline;
     position: relative;
     z-index: 10001;
 }
@@ -466,11 +465,3 @@ form {
     height: 250px;   
     object-fit: cover;
 }
-
-
-
-
-
-
-
-
