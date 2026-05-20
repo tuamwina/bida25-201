@@ -81,55 +81,52 @@
 
                  <div class="booking-form-wrapper">
                     
-
-                     <h2>Booking form</h2> 
+                     <h2>Make a Reservation</h2> 
 
                          <div class="form" id="booking-form">
-
-                             <form class="form-container" id="bookingForm">
 
                              <div class="row">
 
                                  <div class="mb-3">
                                      <label class="form-label">Full Names</label>
 
-                                     <input type="text" name="fullNames" class="form-control" placeholder="Full Names" required> 
+                                     <input type="text" id="full-name" name="full_name" autocomplete="Full names" placeholder="Full Names" required>
+
                                  </div> 
 
                                  <div class="mb-3">
 
-                                     <label class="form-label">Email</label> 
-
-                                     <input type="email" name="email" class="form-control" placeholder="Enter email" required> 
+                                     <label class="form-label">Email</label>
+                                     
+                                     <input type="E-mail" id="e-mail" name="E-mail" autocomplete="E-mail" placeholder="Enter email" required>
 
                                  </div>
 
                                  <div class="check in">
 
-                                     <label class="form-label">check-in</label>
+                                     <label class="form-label">Check-In</label>
 
-                                     <input type="date" class="form-control" required>
+                                     <input type="date" id="Check-In" name="Check_in" class="form-control" required>
 
                                  </div>
 
                                  <div class="check-out">
  
-                                     <label class="form-label">check-out</label>
+                                     <label class="form-label">Check-Out</label>
 
-                                     <input type="date" class="form-control" required>
-
-                                 </div>
-
-                                 <div class="room">
-
-                                      <label class="form-label">Rooms</label>
-
-                                     <input type="number" name="rooms" class="form-control" placeholder="Select number" required>
+                                     <input type="date" id="Check-Out" name="Check_out" class="form-control" required>
 
                                  </div>
- 
-                                 <button type="submit" class="btn btn-primary">Enter</button>
-                             </div>
+
+                                 <div class="form-group">
+
+                                     <label>Preferred Room Type</label>
+
+                                     <a href="accommodation.html" class="btn btn-primary" style="width: 100%; text-align: center; padding: 14px 20px; display: block; margin-top: 5px;">Browse Rooms &amp; Select</a>
+
+                                     <small style="color: #ddd; display: block; margin-top: 8px;">Click above to view our rooms and choose your preferred type</small>
+                                     
+                                 </div>
 
                              </form>
 
