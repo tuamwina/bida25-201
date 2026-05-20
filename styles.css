@@ -153,8 +153,8 @@ a {
 }
 
 .open-button {
-  display: inline-block;
-  margin: 0 auto 20px;
+    display: none;
+    margin: 0 auto 20px;
 }
 
 #booking-form input,
@@ -194,13 +194,18 @@ a {
 
 
 #booking-form {
-    position: relative;
-    z-index: 10001;
+        display: block;
+        position: relative;
+        z-index: 10001;
 }
 
-@media (min-width: 768px) {
-    .booking-form {
-        display: block;
+@media (max-width: 768px) {
+    
+    #booking-form {
+        display: none;
+    }
+    .open-button {
+        display: inline-block;
     }
 }
 
