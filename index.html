@@ -89,56 +89,57 @@
 
                          <div class="form" id="booking-form">
 
-                             <form action="/action_page.php" class="form-container">
+                             <form class="form-container" id="bookingForm">
 
                              <div class="row">
 
-                                 <div class="mb-3 col-md-6">
+                                 <div class="mb-3">
+                                     <label class="form-label">Full Names</label>
+
+                                     <input type="text" name="fullNames" class="form-control" placeholder="Full Names" required> 
+                                 </div> 
+
+                                 
+
+                                 <div class="mb-3">
+
+                                     <label class="form-label">Email</label> 
+
+                                     <input type="email" name="email" class="form-control" placeholder="Enter email" required> 
+
+                                 </div>
+
+                                 <div class="check in">
 
                                      <label class="form-label">check-in</label>
 
-                                     <input type="date" class="form-control">
+                                     <input type="date" class="form-control" required>
 
                                  </div>
 
-                                 <div class="mb-3 col-md-6">
+                                 <div class="check-out">
  
                                      <label class="form-label">check-out</label>
 
-                                     <input type="date" class="form-control">
+                                     <input type="date" class="form-control" required>
 
                                  </div>
 
-                                 <div class="mb-3 col-md-6">
-
-                                     <label class="form-label">Adults</label>
-
-                                     <input type="number" class="form-control">
-
-                                 </div>
-
-                                 <div class="mb-3 col-md-6">
-
-                                     <label class="form-label">children</label>
-
-                                     <input type="number" class="form-control">
-
-                                 </div>
-
-                                 <div class="mb-3 col-md-6">
+                                 <div class="room">
 
                                       <label class="form-label">Rooms</label>
 
-                                     <input type="number" class="form-control">
+                                     <input type="number" name="rooms" class="form-control" placeholder="Select number" required>
 
                                  </div>
  
-                                  <a href="accommodation.html" class="btn btn-primary">Search</a> 
+                                 <button type="submit" class="btn btn-primary">Enter</button>
 
                                  <button type="button" class="close-button" onclick="closeForm()">Close-Form</button>
                              </div>
 
                              </form>
+
  
                              </div>
 

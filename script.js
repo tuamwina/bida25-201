@@ -38,48 +38,67 @@ function closeForm() {
 const contactMessage = document.getElementById("contactMessage");
 
 if (contactMessage) {
-    const contactForm = contactMessage.closest("form");
+    const contactForm = document.querySelector(".contact-form form") || contactMessage.closest("form");
 
-    contactForm.addEventListener("submit", function(e) {
-        e.preventDefault();
+    if (contactForm) {
+        contactForm.addEventListener("submit", function(e) {
+            e.preventDefault();
 
-        contactMessage.style.display = "block";
+            if (!contactForm.checkValidity()) {
+                contactForm.reportValidity();
+                return;
+            }
 
-        contactForm.reset();
+            alert("Thank you for contacting Letsha Sanctuary Lodge. Your message has been received successfully. Our team will get back to you within 24 hours.");
+            contactMessage.style.display = "block";
 
-        setTimeout(() => {
-            contactMessage.style.display = "none";
-        }, 2000);
-    });
+            contactForm.reset();
+        });
+    }
+}
+const buttons = document.querySelectorAll(".book-btn");
+
+function detectAccommodationPage() {
+  try {
+
+    if (
+      document.querySelector('.accommodation-section') ||
+      document.querySelector('.accommodation-cards')
+    ) return true;
+
+  
+    const href = window.location.href.toLowerCase();
+    const path = window.location.pathname.toLowerCase();
+
+    return (
+      href.includes('accommodation.html') ||
+      path.includes('accommodation.html')
+    );
+
+  } catch (err) {
+    console.error("Error detecting accommodation page", err);
+    return false;
+  }
 }
 
-const buttons = document.querySelectorAll(".book-btn");
-let bookings = [];
-
 buttons.forEach(button => {
-    button.addEventListener("click", function (e) {
-        e.preventDefault();
+  button.addEventListener("click", function (e) {
+    e.preventDefault();
 
-        const card = this.closest(".card");
-        const messageDiv = card.querySelector(".bookingMessage");
+    const isAccommodationPage = detectAccommodationPage();
 
-        const roomName = card.querySelector(".card-title").innerText;
+    console.log("book-btn clicked");
 
-        messageDiv.textContent = "Thank you for choosing Letsha Sanctuary Lodge. A confirmation email with your booking details and next steps will be sent to you shortly. We look forward to hosting you.";
+    if (isAccommodationPage) {
 
-        messageDiv.style.display = "block";
+      alert("Thank you for choosing Letsha Sanctuary Lodge. A confirmation email with your booking details and next steps will be sent to you shortly. We look forward to hosting you.");
 
-        setTimeout(() => {
-            messageDiv.style.opacity = "1";
-        }, 10);
+    } else {
 
-        setTimeout(() => {
-            messageDiv.style.opacity = "0";
-            setTimeout(() => {
-                messageDiv.style.display = "none";
-            }, 500);
-        }, 4000);
-    });
+      openForm();
+
+    }
+  });
 });
 
 const bookingForm = document.querySelector("#booking-form form");
@@ -93,11 +112,9 @@ if (bookingForm) {
             return;
         }
 
-        formCompleted = true;
-
-        alert("Thank you! Your booking details have been submitted.");
-        
+        localStorage.setItem("bookingFormCompleted", "true");
         document.getElementById("booking-form").style.display = "none";
+        window.location.href = "accommodation.html";
     });
 }
 
