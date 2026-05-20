@@ -192,10 +192,17 @@ a {
     width: 100%;
 }
 
+
 #booking-form {
-    display: none;
+    display: inline;
     position: relative;
     z-index: 10001;
+}
+
+@media (min-width: 768px) {
+    .booking-form {
+        display: block;
+    }
 }
 
 .open-button {
