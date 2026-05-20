@@ -103,6 +103,11 @@ a {
     margin: 0 auto;
 }
 
+.home-content {
+    flex-direction: column;
+    align-items: center;
+}
+
 .contact-content{
 
     position: relative;
@@ -139,6 +144,17 @@ a {
     z-index: 10000;
     width: 90%;
     margin: 20px auto;
+    text-align: center;
+}
+
+.booking-form-wrapper h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.open-button {
+  display: inline-block;
+  margin: 0 auto 20px;
 }
 
 @media (min-width: 768px) {
@@ -200,27 +216,27 @@ a {
 .open-button {
   background-color: green;
   color: black;
-  padding: 16px 20px;
+  padding: 12px 18px;
   border: none;
   cursor: pointer;
   opacity: 0.8;
   position: static;
-  bottom: 23px;
-  left: 28px;
   width: auto;
   border-radius: 8px;
 }
 
 .close-button {
-
   background-color: #FF474C;
   border-radius: 8px;
-  
+  padding: 10px 14px;
+  font-size: 14px;
 }
 
 .form-container button {
     margin-right: 10px;
     margin-bottom: 10px;
+    padding: 10px 16px;
+    font-size: 14px;
 }
 
 .form-container .btn:hover, .open-button:hover {
